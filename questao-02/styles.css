@@ -24,7 +24,7 @@ header h1 {
 
 header p {
     font-size: 2vw;
-    color: #eeeeee;
+    color: whitesmoke;
     letter-spacing: .26em;
     font-weight: bold;
     text-shadow: 1px 1px 3px black;
@@ -34,25 +34,27 @@ header p {
 main {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     font-size: .9rem;
 }
 
-.intro {
+.section {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    width: 90%;
     height: 100%;
-    margin: 100px 0;
+    width: 100%;
+    padding: 5% 10%;
 }
 
 /* background-image: linear-gradient(to right, white 60%, rgba(0, 0, 0, 0)); */
 /* shape-outside: polygon(30% 0%, 0% 100%, 100% 100%, 100% 0%); */
 /* clip-path: polygon(30% 0%, 0% 100%, 100% 100%, 100% 0%); */
 
-.intro .intro-text {
+.text {
     width: 100%;
     height: 100%;
     display: flex;
@@ -60,40 +62,57 @@ main {
     flex-direction: column;
     text-align: justify;
     align-items: center;
-    margin: 5%;
+    color: #333333;
+    margin: 3%;
 }
 
-.intro img {
+.section img {
     width: auto;
     height: auto;
     max-width: 50%;
     max-height: fit-content;
-    border-radius: 9px;
+    border-radius: 4px;
+    margin: 3%;
 }
-.intro .intro-text p {
+
+.section .text p {
     text-indent: 4ch;
     margin: 5px 0;
 }
 
-.como-circular {
-    background-color: rgb(195, 104, 0);
+.text h2 {
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: black;
 }
 
+.text p {
+    line-height: 1.5em;
+}
+
+.section:nth-child(2n) {
+    background-color: rgb(231, 231, 231);
+    flex-direction: row-reverse;
+}
 
 @keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
 }
 
-@media screen and (max-width: 1290px) {
-    .intro {
+@media screen and (max-width: 1000px) {
+    .section, .como-circular, .section:nth-child(2n) {
         flex-direction: column;
     }
-    .intro .intro-text {
+    .text {
         text-align: center;
         width: 70%;
     }
-    .intro .intro-text p {
+    .text h2 {
+        text-align: center;
+    }
+
+    .text p {
         text-indent: 0;
     }
 }
