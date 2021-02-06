@@ -28,7 +28,6 @@ header p {
     letter-spacing: .26em;
     font-weight: bold;
     text-shadow: 1px 1px 3px black;
-    animation: fadeIn 3s;
 }
 
 main {
@@ -47,12 +46,9 @@ main {
     align-items: center;
     height: 100%;
     width: 100%;
-    padding: 5% 10%;
+    padding: 10% 10%;
+    background-color: rgb(248, 248, 248);
 }
-
-/* background-image: linear-gradient(to right, white 60%, rgba(0, 0, 0, 0)); */
-/* shape-outside: polygon(30% 0%, 0% 100%, 100% 100%, 100% 0%); */
-/* clip-path: polygon(30% 0%, 0% 100%, 100% 100%, 100% 0%); */
 
 .text {
     width: 100%;
@@ -66,13 +62,24 @@ main {
     margin: 3%;
 }
 
-.section img {
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    margin: 3%;
+}
+
+.section .banner img {
     width: auto;
     height: auto;
-    max-width: 50%;
+    max-width: 100%;
     max-height: fit-content;
     border-radius: 4px;
-    margin: 3%;
+}
+
+.section .banner img {
+    margin-bottom: 2%;
 }
 
 .section .text p {
@@ -91,13 +98,8 @@ main {
 }
 
 .section:nth-child(2n) {
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(230, 230, 230);
     flex-direction: row-reverse;
-}
-
-@keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
 }
 
 @media screen and (max-width: 1000px) {
@@ -107,9 +109,6 @@ main {
     .text {
         text-align: center;
         width: 70%;
-    }
-    .text h2 {
-        text-align: center;
     }
 
     .text p {
